@@ -26,9 +26,9 @@ public class Navale5{
 			int totalpoint;
 			totalpoint = 1;
 			//CaseJoueur = PlacerPorteAvion(CaseJoueur);
-			//E3();
+			E3();
 			//JoueurContreOrdi();
-			JoueurContreJoueur();
+		//	JoueurContreJoueur();
 			//CaseJoueur = PlacerPorteAvion2(CaseJoueur);
 			//Ecran.afficher("\n Premier sous marin place");
 			//CaseJoueur = PlacerPorteAvion3(CaseJoueur);
@@ -168,9 +168,6 @@ public class Navale5{
 		
 		
 	}
-	
-		//Declaration de la structure Coo qui se chargera de contenir les informations contenues sur la grille
-
 	static void JoueurContreOrdi(){
 
 		boolean TricheOuNon;
@@ -242,12 +239,6 @@ public class Navale5{
 		else{
 			Ecran.afficher("\n Vous avez gagne \n");
 		}
-			//DU DEBUG A JARTER ICI !!
-			Ecran.afficherln("Debug 1 !! ", (CaseOrdi.torpilleur), "\n");
-			Ecran.afficherln("Debug 2 !! ", (CaseOrdi.porte_avion2 ), "\n");
-			Ecran.afficherln("Debug 3 !! ", (CaseOrdi.porte_avion3 ), "\n");
-			Ecran.afficherln("Debug 4 !! ", (CaseOrdi.porte_avion ), "\n");
-			Ecran.afficherln("Debug 5 !! ", (CaseOrdi.croiseur ), "\n");
 			
 		Ecran.afficherln("\n CaseOrdi.torpilleur = ", CaseOrdi.torpilleur, "\n CaseOrdi.sous_marin1 = ", CaseOrdi.sous_marin1, "\n CaseOrdi.sous_marin2 = ", CaseOrdi.sous_marin2, "\n CaseOrdi.croiseur = ", CaseOrdi.croiseur, "CaseOrdi.porte_avion = ", CaseOrdi.porte_avion);
 		
@@ -255,18 +246,6 @@ public class Navale5{
 		
 		
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 static void JoueurContreJoueur(){
 
@@ -364,49 +343,12 @@ static void JoueurContreJoueur(){
 		else{
 			Ecran.afficher("\n Joueur 2 a gagne la partie !\n");
 		}
-			/*//DU DEBUG A JARTER ICI !!
-			Ecran.afficherln("Debug 1 !! ", (CaseJoueur2.torpilleur), "\n");
-			Ecran.afficherln("Debug 2 !! ", (CaseJoueur2.porte_avion2 ), "\n");
-			Ecran.afficherln("Debug 3 !! ", (CaseJoueur2.porte_avion3 ), "\n");
-			Ecran.afficherln("Debug 4 !! ", (CaseJoueur2.porte_avion ), "\n");
-			Ecran.afficherln("Debug 5 !! ", (CaseJoueur2.croiseur ), "\n");
-			*/
 		Ecran.afficherln("\n CaseJoueur2.torpilleur = ", CaseJoueur2.torpilleur, "\n CaseJoueur2.sous_marin1 = ", CaseJoueur2.sous_marin1, "\n CaseJoueur2.sous_marin2 = ", CaseJoueur2.sous_marin2, "\n CaseJoueur2.croiseur = ", CaseJoueur2.croiseur, "CaseJoueur2.porte_avion = ", CaseJoueur2.porte_avion);
 		
 		
 		
 		
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	static boolean ConditionVictoireOrdi(Case CaseOrdi){
 		boolean victoire;
@@ -527,9 +469,7 @@ static void JoueurContreJoueur(){
 
 			abscisse = CharHasard();
 			ordonnee = EntierHasard();
-			
-			
-			
+				
 			LaCoo.x = abscisse;
 			LaCoo.y = ordonnee;
 			DejaVise = BateauEstIlVise(LaCase, LaCoo);
@@ -539,25 +479,17 @@ static void JoueurContreJoueur(){
 		
 		}while(DejaVise == true);
 		Ecran.afficher(" \n L'ordinateur a lance un missile a la case : ", abscisse,ordonnee);
-		
-		LancerMissileCorrespondance(LaCase, LaCoo);
-		
-		//Correspondance(LaCase, LaCoo, "");		
-		LancerMissile(LaCase, LaCoo);
+		LancerMissileCorrespondance(LaCase, LaCoo);	
+		LancerMissile(LaCase, LaCoo); // DEBUG Normac cette commande ci ?
 		
 		return LaCase;
 		}
 	
 	static Case LancerMissile(Case LaCase, Coo CooSaisie){
-		/* //Debug a enlever !
-		Ecran.afficher("\n On est entre !! \n");
-		Ecran.afficherln("\n \n \n ", LaCase.porte_avion, "\n \n \n ");
-		*/
 
 		int condition;
 		condition = 0;
 
-		//Ecran.afficherln(CooSaisie.typeBateau);	
 		CooSaisie.aimed = true;
 		if (CooSaisie.boat == false){
 			Ecran.afficher("\n A l'eau \n");
@@ -580,7 +512,6 @@ static void JoueurContreJoueur(){
 		else if (CooSaisie.typeBateau == "porte_avion2"){
 			
 			condition = 1;
-		//	Ecran.afficher("\n \n \n \n \n \n \n \n \n \n \n \n DEBUG Entree dans sous marin1");
 			
 				if (LaCase.porte_avion2 == 1){
 					Ecran.afficher("\n touche, coule \n");
@@ -596,7 +527,6 @@ static void JoueurContreJoueur(){
 		else if (CooSaisie.typeBateau == "porte_avion3"){
 			
 			condition = 1;
-	//		Ecran.afficher("\n \n \n \n \n \n \n \n \n \n \n \n DEBUG Entree dans sous marin3");
 			
 				if (LaCase.porte_avion3 == 1){
 					Ecran.afficher("\n touche, coule \n");
@@ -951,9 +881,8 @@ static void JoueurContreJoueur(){
 
 			
 			
-		return Entree;}
-		
-	
+		return Entree;}	
+	//Declaration de la structure Coo qui se chargera de contenir les informations contenues sur la grille
 		static class Coo{
 		int y;
 		char x;
@@ -963,9 +892,8 @@ static void JoueurContreJoueur(){
 		boolean aLeau;
 		String typeBateau;
 	}
-	
+	//Declaration de la structure Case qui contient tout les informations contenues dans les cases	
 		static class Case{
-		boolean Debug;
 		int torpilleur = 2;
 		int sous_marin1= 3;
 		int sous_marin2 = 3;
@@ -1786,7 +1714,6 @@ static void JoueurContreJoueur(){
 	return NewCase;	
 }
 	
-
 	//Entree, un int, un char
 	//Est renvoye : vrai si les deux valeurs entrees sont dans l'intervalle de la grille du jeu
 	static boolean VerifSaisie(int entier, char caractere){
@@ -1834,7 +1761,7 @@ static void JoueurContreJoueur(){
 		char case2x;
 		int case2y;
 		
-		adjacent = false; //Rechanger a false apres ceci est un debug !!
+		adjacent = false; 
 		
 		do{
 			
@@ -1882,18 +1809,15 @@ static void JoueurContreJoueur(){
 			Entree1.x = case1x;
 			Entree1.y = case1y;
 
-			//On appelle une sous fonction pour trouver la case qui correspond
+		//On appelle une sous fonction pour trouver la case qui correspond
 			
-	
 		//} while((BateauOuPas(LaCase, Entree1) == false));
 
 		//On demande une deuxieme saisie pour la seconde case
 			
 		Ecran.afficher("Veuillez entre un caractere : ");
 		case2x = Clavier.saisirChar();
-			
-		
-		
+				
 		while(((int)case2x< 65) || ((int)case2x > 74)){
 			Ecran.afficher("Erreur de saisie, veuillez entrer un char correct \n");
 			case2x = Clavier.saisirChar();
@@ -1915,8 +1839,6 @@ static void JoueurContreJoueur(){
 
 		//On rappelle la fonction pour trouver la case qui correspond
 		
-		
-
 		//On regarde si la case a deja un bateau
 		
 		//On regarde si cette case est adjacente a la premiere
@@ -1937,8 +1859,8 @@ static void JoueurContreJoueur(){
 		
 		return LaCase;
 	}
-	
-	
+	//Entree : La case de jeu ou l'on souhaite placer le bateau
+	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerCroiseur(Case LaCase){
 		//Declaration des variables
 		
@@ -2167,8 +2089,9 @@ static void JoueurContreJoueur(){
 	
 		return LaCase;
 		}
-	
-	
+		
+	//Entree : La case de jeu ou l'on souhaite placer le bateau
+	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerSousMarin(Case LaCase, String nbSousMarin){
 		
 		Coo Entree1 = new Coo();
@@ -2337,16 +2260,9 @@ static void JoueurContreJoueur(){
 	return LaCase;
 	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+	//Entree : La case de jeu ou l'on souhaite placer le bateau
+	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerSousMarin1(Case LaCase){
 		
 		Coo Entree1 = new Coo();
@@ -2525,17 +2441,9 @@ static void JoueurContreJoueur(){
 	
 		return LaCase;
 		}
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
+		
+	//Entree : La case de jeu ou l'on souhaite placer le bateau
+	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerPorteAvion(Case LaCase){
 		
 		Coo Entree1 = new Coo();
@@ -2860,15 +2768,8 @@ static void JoueurContreJoueur(){
 		return LaCase;
 		}
 
-
-
-
-
-
-
-
-
-
+	//Entree : La case de jeu ou l'on souhaite placer le bateau
+	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerPorteAvion2(Case LaCase){
 		
 			Coo Entree1 = new Coo();
@@ -3082,7 +2983,8 @@ static void JoueurContreJoueur(){
 			return LaCase;
 			}
 
-
+	//Entree : La case de jeu ou l'on souhaite placer le bateau
+	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerPorteAvion3(Case LaCase){
 		
 				Coo Entree1 = new Coo();
@@ -3294,19 +3196,10 @@ static void JoueurContreJoueur(){
 			AffichageGrille(LaCase);
 			
 				return LaCase;
-				}
-	
+				}	
 
-
-
-
-
-
-
-
-
-
-
+	//Entree : La case de jeu ou l'on souhaite placer le bateau
+	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerPorteAvion3CopieAncienneDEBUGAENLEVER(Case LaCase){
 		
 			Coo Entree1 = new Coo();
@@ -3493,19 +3386,8 @@ static void JoueurContreJoueur(){
 				return LaCase;
 				}
 
-
-
-
-
-
-
-
-
-
-
-
-
-	
+	//Entree : La case de jeu ou l'on souhaite placer le bateau
+	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static void AffichageGrille(Case LaCaseAffich){
 		
 		int compteur = 0;
@@ -4234,9 +4116,7 @@ static void JoueurContreJoueur(){
 	//Entree : Rien
 	//Est renvoye : Rien
 	//Lance la premiere etape du jeu en appelant different sous algorithmes
-	
-	
-	  
+		  
 	static void E2(){
 		Case CaseOrdinateur = new Case();
 		CaseOrdinateur = DeclarationDeLaGrille();
@@ -4252,7 +4132,7 @@ static void JoueurContreJoueur(){
 		}
 
 	
-		//Entree : Aucune
+	//Entree : Aucune
 	//Retourne : Un entier au hasard entre 1 et 10 inclus 
 	static int EntierHasard(){
 		
@@ -4282,7 +4162,7 @@ static void JoueurContreJoueur(){
 	}
 	
 	//Entree : Aucune
-	//Renvoie vrai une fois sur deux
+	//Renvoie vrai une fois au hasard
 	static boolean ConditHasard(){
 		boolean LunOuLautre;
 		int entierHasard;
@@ -4301,6 +4181,8 @@ static void JoueurContreJoueur(){
 		return LunOuLautre;
 	}
 
+	//Entree : la grile de l'ordinateur
+	//Renvoie la grille de l'ordi avec un bateau place
 	static Case PlacerTorpilleurOrdi(Case LaCase){
 	
 		
@@ -4391,7 +4273,7 @@ static void JoueurContreJoueur(){
 	}
 	
 	//Entree : la grile de l'ordinateur
-	//Renvoie la grille de l'ordi avec un sous marin place
+	//Renvoie la grille de l'ordi avec un bateau place
 	static Case PlacerSousMarinOrdi1(Case LaCase){
 
 		
@@ -4402,7 +4284,6 @@ static void JoueurContreJoueur(){
 		
 		String bateau;
 		bateau = "porte_avion2";
-		Ecran.afficher("\n DEBUUUUG ", bateau);
 
 		int transtypage;
 
@@ -4495,6 +4376,8 @@ static void JoueurContreJoueur(){
 		return LaCase;
 	}
 
+	//Entree : la grile de l'ordinateur
+	//Renvoie la grille de l'ordi avec un bateau place
 	static Case PlacerCroiseurOrdi(Case LaCase){
 	
 		boolean adjacent;
@@ -4617,7 +4500,8 @@ static void JoueurContreJoueur(){
 	
 	
 	}
-
+	//Entree : la grile de l'ordinateur
+	//Renvoie la grille de l'ordi avec un bateau place
 	static Case PlacerPorteAv(Case LaCase){
 		
 		boolean adjacent;
@@ -4760,17 +4644,8 @@ static void JoueurContreJoueur(){
 
 
 	}
-
-
-
-
-
-
-
-
-
-
-
+	//Entree : la grile de l'ordinateur
+	//Renvoie la grille de l'ordi avec un bateau place
 	static Case PlacerPorteAv2(Case LaCase){
 		
 		boolean adjacent;
@@ -4902,24 +4777,8 @@ static void JoueurContreJoueur(){
 
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	//Entree : la grile de l'ordinateur
+	//Renvoie la grille de l'ordi avec un bateau place
 	static Case PlacerPorteAv3(Case LaCase){
 		
 		boolean adjacent;
@@ -5051,23 +4910,6 @@ static void JoueurContreJoueur(){
 
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	//Sert a verifier que une case soit adjacente a une autre
 	//Entree : Une coo a1, et une coo a2
 	//Est renvoye : Vrai si les deux cases sont adjacentes, faux sinon.
@@ -5118,9 +4960,8 @@ static void JoueurContreJoueur(){
 		}
 */
 		return verifCondition;
-	}
-	
-	
+	}	
+	//Entree : La case du joueur ennemi a afficher	
 	static void AffichageGrilleEnnemi(Case LaCaseAffiche){
 		Ecran.afficher("\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |10|  \n");
 		Ecran.afficher("| A |");
@@ -5846,8 +5687,7 @@ static void JoueurContreJoueur(){
 
 				
 		
-		}
-	
+		}	
 	//Sert a verifier qu'il n'y ait aucun bateau sur la case demandee.
 	//Entree une coordonee
 	//Est renvoye : Faux si il n'y a aucun bateau sur la case (soit Coo.boat == false), true sinon
@@ -5860,11 +5700,6 @@ static void JoueurContreJoueur(){
 		}
 		return verifCondition;
 	}
-	
-	//Entree : Rien
-	//Est renvoye : Rien
-	//Sert a declarer les Structures utilisees pour creer la grille du jeu
-	
 	//Entree : la grille de jeu voulu et la coordonne a tester
 	//Sortie : le programme va trouver la coordonne correspondante et retrouner vrai si il y a un bateau, faux sinon
 	static boolean BateauOuPas (Case Entree, Coo Atester){
@@ -6277,8 +6112,7 @@ static void JoueurContreJoueur(){
 		     
 			// DEBUG A ENLEVER Ecran.afficherln(ApasBateau, " est la valeur de ApasBateau DEBUG \n");
 		return ApasBateau;
-	}
- 
+	} 
 	//Entree : La grille de jeu sur lequel est la coordonee, et la coordonee
 	//Sortie : Vrai si la case visee a deja ete visee, faux sinon
 	static boolean BateauEstIlVise (Case Entree, Coo Atester){
@@ -6692,9 +6526,8 @@ static void JoueurContreJoueur(){
 		return CeBateauEstVise;
 
 	}
-
-
-	
+	//Entree : Une case, une coordonee et le nom du bateau	
+	//Sortie : La case entree, avec un bateau du nom du string entre place a la coordonnee mise en entree
 	static Case Correspondance(Case Entree, Coo Atester, String leBateau){
 		
 		boolean ApasBateau;
@@ -6702,7 +6535,6 @@ static void JoueurContreJoueur(){
 		
 		Case CaseEntree = new Case();
 		CaseEntree = Entree;
-		CaseEntree.Debug = true;
 
 		if ((Atester.x == Entree.A1.x) && (Atester.y == Entree.A1.y)){
 		     if (VerifCoo(Entree.A1) == false) {
@@ -7414,9 +7246,4 @@ static void JoueurContreJoueur(){
 		return Entree;
 		
 		}
-}
-	
-
-
-	
-	
+}	
