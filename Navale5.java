@@ -1,13 +1,11 @@
+/** 
+ * Florian GREDY | Quentin RADLO | Projet Bataille Navale S1 | Groupe I2
+*/
 public class Navale5{
 		
 		public static void main(String args[]){
-			Case CaseJoueur = new Case();
-			
-			
-			
+			Case CaseJoueur = new Case();			
 			CaseJoueur = DeclarationDeLaGrille();
-			
-
 			//CaseJoueur = PlacerTorpilleur(CaseJoueur);
 			Ecran.afficher("\n");
 			//CaseJoueur = PlacerCroiseur(CaseJoueur);
@@ -48,10 +46,6 @@ public class Navale5{
 */
 
 			//Placement des bateaux de l'ordinateur
-
-
-
-			
 			//AffichageGrilleEnnemi(CaseJoueur);
 			//CaseJoueur = PlacerTorpilleur(CaseJoueur);
 			//CaseJoueur = PlacerSousMarin(CaseJoueur, "1");
@@ -78,9 +72,6 @@ public class Navale5{
 			LancerMissile(CaseJoueur, CaseJoueur.J4);
 			LancerMissile(CaseJoueur, CaseJoueur.J5);
 			AffichageGrilleEnnemi(CaseJoueur);
-			
-			
-			
 			LancerMissileOrdi(CaseJoueur);
 			AffichageGrilleEnnemi(CaseJoueur);
 			//Ecran.afficherln(CaseJoueur.G4.typeBateau);
@@ -94,7 +85,10 @@ public class Navale5{
 			
 			
 	}
-
+	/**
+	*@param Entree : Aucune 
+	*@return : Vrai si l'utilisateur souhaite tricher faux sinon 
+	*/
 	static boolean Triche(){
 		boolean LaTriche;
 		LaTriche =  false;
@@ -124,7 +118,12 @@ public class Navale5{
 		return LaTriche;
 
 	}
+	/**
 	
+	*Sert a lancer l'etape 3 du projet, soit le mode de jeu Joueur Contre Ordi sans riposte du dernier
+	*@param Entree : Aucune
+	*@return Sortie : Aucune
+	*/	
 	static void E3(){
 
 		boolean triche;
@@ -246,7 +245,11 @@ public class Navale5{
 		
 		
 	}
-
+	/**
+	 * Lance le mode de jeu joueur contre Joueur
+	 * @param Entree : Aucune
+	 * @return Sortie : Rien
+	 */
 static void JoueurContreJoueur(){
 
 		boolean TricheOuNon;
@@ -349,7 +352,11 @@ static void JoueurContreJoueur(){
 		
 		
 	}
-
+	/**
+	 * Calcule les valeurs des differents bateaux pour voir si ils sont tous coules
+	 * @param Entree : La case de l'ordinateur
+	 * @return Vrai si tous les bateaux sont coules faux sinon
+	 */
 	static boolean ConditionVictoireOrdi(Case CaseOrdi){
 		boolean victoire;
 		victoire = false;
@@ -360,6 +367,11 @@ static void JoueurContreJoueur(){
 		return victoire;
 		
 		}
+	/**
+	 * L'utilisateur saisie des coordonnes et envoie un missile sur la case ennemi
+	 * @param Entree : la case de l'ennemi ou sera tire le missile
+	 * @return Sortie : la case de l'ennemi avec un missile tire dessus
+	 */
 	static Case SaisirCoo(Case CaseEnnemi){
 		
 		int entierSaisi;
@@ -399,7 +411,6 @@ static void JoueurContreJoueur(){
 		
 		
 		}
-	
 	static Case LancerMissileJoueur(Case LaCase){
 		boolean DejaVise;
 
@@ -480,7 +491,7 @@ static void JoueurContreJoueur(){
 		}while(DejaVise == true);
 		Ecran.afficher(" \n L'ordinateur a lance un missile a la case : ", abscisse,ordonnee);
 		LancerMissileCorrespondance(LaCase, LaCoo);	
-		LancerMissile(LaCase, LaCoo); // DEBUG Normac cette commande ci ?
+		LancerMissile(LaCase, LaCoo); // DEBUG Normal cette commande ci ?
 		
 		return LaCase;
 		}
@@ -1004,7 +1015,7 @@ static void JoueurContreJoueur(){
 
 
 	}
-
+	//Sert a affecter les valeurs a une nouvelle grille de jeu
 	static Case DeclarationDeLaGrille(){
 
 	Coo A1= new Coo(); 
@@ -2088,8 +2099,7 @@ static void JoueurContreJoueur(){
 
 	
 		return LaCase;
-		}
-		
+		}		
 	//Entree : La case de jeu ou l'on souhaite placer le bateau
 	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerSousMarin(Case LaCase, String nbSousMarin){
@@ -2259,8 +2269,7 @@ static void JoueurContreJoueur(){
 	
 	return LaCase;
 	
-	}
-		
+	}		
 	//Entree : La case de jeu ou l'on souhaite placer le bateau
 	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerSousMarin1(Case LaCase){
@@ -2440,8 +2449,7 @@ static void JoueurContreJoueur(){
 	} while (adjacent == false);
 	
 		return LaCase;
-		}
-		
+		}		
 	//Entree : La case de jeu ou l'on souhaite placer le bateau
 	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerPorteAvion(Case LaCase){
@@ -2767,7 +2775,6 @@ static void JoueurContreJoueur(){
 	
 		return LaCase;
 		}
-
 	//Entree : La case de jeu ou l'on souhaite placer le bateau
 	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerPorteAvion2(Case LaCase){
@@ -2982,7 +2989,6 @@ static void JoueurContreJoueur(){
 		
 			return LaCase;
 			}
-
 	//Entree : La case de jeu ou l'on souhaite placer le bateau
 	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerPorteAvion3(Case LaCase){
@@ -3197,7 +3203,6 @@ static void JoueurContreJoueur(){
 			
 				return LaCase;
 				}	
-
 	//Entree : La case de jeu ou l'on souhaite placer le bateau
 	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static Case PlacerPorteAvion3CopieAncienneDEBUGAENLEVER(Case LaCase){
@@ -3385,7 +3390,6 @@ static void JoueurContreJoueur(){
 			
 				return LaCase;
 				}
-
 	//Entree : La case de jeu ou l'on souhaite placer le bateau
 	// Est retourne : Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	static void AffichageGrille(Case LaCaseAffich){
@@ -4112,11 +4116,9 @@ static void JoueurContreJoueur(){
 		
 		
 	}
-	
 	//Entree : Rien
 	//Est renvoye : Rien
-	//Lance la premiere etape du jeu en appelant different sous algorithmes
-		  
+	//Lance la premiere etape du jeu en appelant different sous algorithmes		  
 	static void E2(){
 		Case CaseOrdinateur = new Case();
 		CaseOrdinateur = DeclarationDeLaGrille();
@@ -4129,9 +4131,7 @@ static void JoueurContreJoueur(){
 		CaseOrdinateur = PlacerPorteAv(CaseOrdinateur);
 
 		AffichageGrille(CaseOrdinateur);
-		}
-
-	
+		}	
 	//Entree : Aucune
 	//Retourne : Un entier au hasard entre 1 et 10 inclus 
 	static int EntierHasard(){
@@ -4143,8 +4143,7 @@ static void JoueurContreJoueur(){
 		doubleHasard = doubleHasard * 10;
 		entierHasard = (int) doubleHasard + 1;
 		return entierHasard;
-	}
-	
+	}	
 	//Entree : Aucune
 	//Retourne : Un char entre A et J inclus.
 	static char CharHasard(){
@@ -4159,8 +4158,7 @@ static void JoueurContreJoueur(){
 		lettre = (char) nbvirgule;
 
 		return lettre;
-	}
-	
+	}	
 	//Entree : Aucune
 	//Renvoie vrai une fois au hasard
 	static boolean ConditHasard(){
