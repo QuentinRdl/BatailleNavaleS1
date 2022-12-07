@@ -5,85 +5,7 @@
 public class Navale5{
 		
 		public static void main(String args[]){
-			Case CaseJoueur = new Case();			
-			CaseJoueur = DeclarationDeLaGrille();
-			//CaseJoueur = PlacerTorpilleur(CaseJoueur);
-			Ecran.afficher("\n");
-			//CaseJoueur = PlacerCroiseur(CaseJoueur);
-			Ecran.afficher("\n");
-			//PlacerSousMarin(CaseJoueur, "1");
-			//PlacerPorteAvion(CaseJoueur);
-			//AffichageGrille(CaseJoueur);
-
-			//JoueurContreOrdi();
-			/*
-			Case CaseJoueur  = new Case();
-			CaseJoueur = DeclarationDeLaGrille();
-			PlacerSousMarin(CaseOrdi, "1")
-			
-			*/
-			int totalpoint;
-			totalpoint = 1;
-			//CaseJoueur = PlacerPorteAvion(CaseJoueur);
 			E3();
-			//JoueurContreOrdi();
-		//	JoueurContreJoueur();
-			//CaseJoueur = PlacerPorteAvion2(CaseJoueur);
-			//Ecran.afficher("\n Premier sous marin place");
-			//CaseJoueur = PlacerPorteAvion3(CaseJoueur);
-			/*Ecran.afficher("\n Second sous marin place");
-			CaseJoueur = PlacerPorteAv2(CaseJoueur);
-			CaseJoueur = PlacerPorteAv3(CaseJoueur);
-			AffichageGrille(CaseJoueur);
-			
-			while (totalpoint != 0){
-				totalpoint = (CaseJoueur.porte_avion2 + CaseJoueur.porte_avion3);
-				Ecran.afficher("\n La valeur de total point est : ", totalpoint);
-				LancerMissileJoueur(CaseJoueur);
-				Ecran.afficher("\n Vous avez lance un missile ! \n");
-				AffichageGrilleEnnemi(CaseJoueur);
-				//totalpoint = (CaseJoueur.croiseur + CaseJoueur.torpilleur + CaseJoueur.porte_avion + CaseJoueur.porte_avion2 + CaseJoueur.porte_avion3);
-			}
-*/
-
-			//Placement des bateaux de l'ordinateur
-			//AffichageGrilleEnnemi(CaseJoueur);
-			//CaseJoueur = PlacerTorpilleur(CaseJoueur);
-			//CaseJoueur = PlacerSousMarin(CaseJoueur, "1");
-			//CaseJoueur = PlacerSousMarin(CaseJoueur, "2");
-			//CaseJoueur = PlacerCroiseur(CaseJoueur);
-			/*CaseJoueur = PlacerSousMarin1(CaseJoueur);
-			LancerMissileJoueur(CaseJoueur);
-			LancerMissileJoueur(CaseJoueur);
-			Ecran.afficherln("\n Debug la valeur du porte_avion est :  ", (CaseJoueur.sous_marin1 ), "\n");
-			LancerMissileJoueur(CaseJoueur);
-			LancerMissileJoueur(CaseJoueur);
-			Ecran.afficherln("\n Debug la valeur du porte_avion est :  ", (CaseJoueur.sous_marin1 ), "\n");
-			AffichageGrille(CaseJoueur);
-			AffichageGrilleEnnemi(CaseJoueur);*/
-			/*
-			
-			Ecran.afficher(CaseJoueur.A1.typeBateau);
-			LancerMissile(CaseJoueur, CaseJoueur.A1);
-			LancerMissile(CaseJoueur, CaseJoueur.A2);
-			
-			LancerMissile(CaseJoueur, CaseJoueur.J1);
-			LancerMissile(CaseJoueur, CaseJoueur.J2);
-			LancerMissile(CaseJoueur, CaseJoueur.J3);
-			LancerMissile(CaseJoueur, CaseJoueur.J4);
-			LancerMissile(CaseJoueur, CaseJoueur.J5);
-			AffichageGrilleEnnemi(CaseJoueur);
-			LancerMissileOrdi(CaseJoueur);
-			AffichageGrilleEnnemi(CaseJoueur);
-			//Ecran.afficherln(CaseJoueur.G4.typeBateau);
-			//AffichageGrille(CaseJoueur);
-			//E2();
-
-			*/
-			//AffichageGrille();
-			//SaisirCoo(CaseJoueur);
-			//SaisirCoo(CaseJoueur);
-			
 			
 	}
 	/**
@@ -119,12 +41,70 @@ public class Navale5{
 		return LaTriche;
 
 	}
-	/**
 	
+	
+	/**	
+	* Sert a lancer le menu principale du jeu ou le joueur fait le choix du monde de jeu 
+	* @param Aucune
+	* @return Aucune
+	*/	
+	
+	static void AffichageMenuPrincipal(){
+		int SaisieUser;
+		Ecran.afficher("*------------------------------------------------*\n");
+		Ecran.afficher("*                   BATAILLE NAVALE                 *\n*------------------------------------------------*\n*                      Instructions :                     *\n*Selectionnez le mode de jeu au quel vous   *\n*voulez jouer en inserant le chiffre               *\n*correspondant dans le l'invite de commande*\n" );
+		Ecran.afficher("*1. Regles*\n");
+		Ecran.afficher("*2. Test du placement manuel des bateaux*\n");
+		Ecran.afficher("*3. Test du placement automatique des bateaux *\n");
+		Ecran.afficher("*4. Joueur seul contre Ordinateur*\n");
+		Ecran.afficher("*5. Joueur contre Ordinateur*\n");
+		Ecran.afficher("*6. Joueur contre Joueur*\n");
+		Ecran.afficher("\nVeuilez saisir un nombre correspondant au mode de jeu souhaite\n");
+		SaisieUser = saisir();
+		switch(SaisieUser){
+			case 1:
+				Ecran.afficher("Switch 1");
+				break;
+
+			case 1:
+				Ecran.afficher("Switch 2");
+				break;
+				
+			case 3:
+				Ecran.afficher("Switch 3");
+				break;
+			case 4:
+				Ecran.afficher("Switch 1");
+				break;
+
+			case 5:
+				Ecran.afficher("Switch 2");
+				JoueurContreOrdi();
+				break;
+				
+			case 6:
+				Ecran.afficher("Switch 6");
+				JoueurContreJoueur();
+				break;
+		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/**	
 	*Sert a lancer l'etape 3 du projet, soit le mode de jeu Joueur Contre Ordi sans riposte du dernier
 	*@param Entree : Aucune
 	*@return Sortie : Aucune
 	*/	
+	
+	
 	static void E3(){
 
 		boolean triche;
@@ -3239,7 +3219,6 @@ static void JoueurContreJoueur(){
 	/**	
 	* @param La case de jeu ou l'on souhaite placer le bateau
 	* @return Le type Case qui contient la case de jeu entree avec le bateau maintenant place
-	* @deprecated 
 	*/
 	static Case PlacerPorteAvion3CopieAncienneDEBUGAENLEVER(Case LaCase){
 		
@@ -4177,7 +4156,7 @@ static void JoueurContreJoueur(){
 	 * @param Rien
 	 * @return Un entier au hasard entre 1 et 10 inclus 
 	 */
-	static int EntierHasard{
+	static int EntierHasard(){
 		
 		double doubleHasard;
 		int entierHasard;
