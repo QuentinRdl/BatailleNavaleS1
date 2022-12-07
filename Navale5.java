@@ -2686,10 +2686,7 @@ static void JoueurContreJoueur(){
 			
 			compteur = 0;
 			do{
-			
 				
-		
-	
 			//On demande la saisie de l'utilisateur
 			//
 			//On verifie la saisie
@@ -2703,9 +2700,7 @@ static void JoueurContreJoueur(){
 				
 				Ecran.afficher("Veuillez entre un caractere : ");
 				case2x = Clavier.saisirChar();
-					
-				
-				
+						
 				while(((int)case2x< 65) || ((int)case2x > 74)){
 					Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
 					case2x = Clavier.saisirChar();
@@ -2713,7 +2708,6 @@ static void JoueurContreJoueur(){
 						
 				Ecran.afficher("Veuillez entre un entier : ");
 				case2y = Clavier.saisirInt();
-					
 					
 				while((case2y < 1) || (case2y > 10)){
 					Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
@@ -2723,12 +2717,6 @@ static void JoueurContreJoueur(){
 				
 				Entree2.x = case2x;
 				Entree2.y = case2y;
-		
-				
-		
-				//On rappelle la fonction pour trouver la case qui correspond
-				
-				
 		
 				//On regarde si la case a deja un bateau
 				BateauEn2 = BateauOuPas(LaCase, Entree2);
@@ -2742,27 +2730,16 @@ static void JoueurContreJoueur(){
 			else{Ecran.afficher("\n Erreur, les deux points entrees ne sont pas adjacent ! \n");}
 		} while (adjacent == false);
 			compteur = 0;
-			adjacent = false; // DEBUG rechanger a false apres
+			adjacent = false; 
 			do {
-			//On demande la saisie de la troisieme case 
-			
-	
-			//On demande la saisie de l'utilisateur
-			//
-			//On verifie la saisie
-			//
-			//Ici on les fixe manuellement pour ne pas avoir a tester chaque fois
 			
 			if (compteur > 0){
 					Ecran.afficher("\n Erreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
-				}
-				
+				}	
 			
 			Ecran.afficher("\n Veuillez entre un caractere : ");
 			case3x = Clavier.saisirChar();
 				
-			
-			
 			while(((int)case3x< 65) || ((int)case3x > 74)){
 				Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct\n");
 				case3x = Clavier.saisirChar();
@@ -2770,7 +2747,6 @@ static void JoueurContreJoueur(){
 					
 			Ecran.afficher("\nVeuillez entre un entier : ");
 			case3y = Clavier.saisirInt();
-				
 				
 			while((case3y < 1) || (case3y > 10)){
 				Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct\n");
@@ -2780,11 +2756,7 @@ static void JoueurContreJoueur(){
 			
 			Entree3.x = case3x;
 			Entree3.y = case3y;
-		
-			//On appelle la fonction pour trouver la case qui correspond
-		
 			
-		
 			//On verifie quelle est bien adjacente a le deuxieme case saisie
 		
 			if (VerfAdj(Entree2, Entree3) == true){
@@ -2857,10 +2829,6 @@ static void JoueurContreJoueur(){
 						Ecran.afficher("Placement de la premiere case du sous marin");
 		
 				//On demande la saisie de l'utilisateur
-				//
-				//On verifie la saisie
-				//
-				//Ici on les fixe manuellement pour ne pas avoir a tester chaque fois
 				
 					if (compteur > 0){
 							Ecran.afficher("\n Erreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
@@ -2870,9 +2838,7 @@ static void JoueurContreJoueur(){
 					
 					Ecran.afficher("Veuillez entre un caractere : ");
 					case1x = Clavier.saisirChar();
-						
-					
-					
+								
 					while(((int)case1x< 65) || ((int)case1x > 74)){
 						Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
 						case1x = Clavier.saisirChar();
@@ -2880,7 +2846,6 @@ static void JoueurContreJoueur(){
 							
 					Ecran.afficher("Veuillez entre un entier : ");
 					case1y = Clavier.saisirInt();
-						
 						
 					while((case1y < 1) || (case1y > 10)){
 						Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
@@ -2893,7 +2858,6 @@ static void JoueurContreJoueur(){
 					//On appelle une sous fonction pour trouver la case qui correspond
 					BateauEn1 = BateauOuPas(LaCase, Entree1);
 					
-					
 					compteur ++;
 					}while(BateauEn1 == true);
 					
@@ -2903,24 +2867,14 @@ static void JoueurContreJoueur(){
 				compteur = 0;
 				do{
 				
-					
-			
-		
 				//On demande la saisie de l'utilisateur
-				//
-				//On verifie la saisie
-				//
-				//Ici on les fixe manuellement pour ne pas avoir a tester chaque fois
-					
 					if (compteur > 0){
 						Ecran.afficher("\n Erreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 						}
 						
 					
 					Ecran.afficher("Veuillez entre un caractere : ");
-					case2x = Clavier.saisirChar();
-						
-					
+					case2x = Clavier.saisirChar();	
 					
 					while(((int)case2x< 65) || ((int)case2x > 74)){
 						Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
@@ -2940,12 +2894,6 @@ static void JoueurContreJoueur(){
 					Entree2.x = case2x;
 					Entree2.y = case2y;
 			
-					
-			
-					//On rappelle la fonction pour trouver la case qui correspond
-					
-					
-			
 					//On regarde si la case a deja un bateau
 					BateauEn2 = BateauOuPas(LaCase, Entree2);
 					compteur ++;
@@ -2958,17 +2906,9 @@ static void JoueurContreJoueur(){
 				else{Ecran.afficher("\n Erreur, les deux points entrees ne sont pas adjacent ! \n");}
 			} while (adjacent == false);
 				compteur = 0;
-				adjacent = false; // DEBUG rechanger a false apres
+				adjacent = false;
 				do {
 				//On demande la saisie de la troisieme case 
-				
-		
-				//On demande la saisie de l'utilisateur
-				//
-				//On verifie la saisie
-				//
-				//Ici on les fixe manuellement pour ne pas avoir a tester chaque fois
-				
 				if (compteur > 0){
 						Ecran.afficher("\n Erreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 					}
@@ -2996,11 +2936,7 @@ static void JoueurContreJoueur(){
 				
 				Entree3.x = case3x;
 				Entree3.y = case3y;
-			
-				//On appelle la fonction pour trouver la case qui correspond
-			
-				
-			
+
 				//On verifie quelle est bien adjacente a le deuxieme case saisie
 			
 				if (VerfAdj(Entree2, Entree3) == true){
@@ -3017,195 +2953,6 @@ static void JoueurContreJoueur(){
 			
 				return LaCase;
 				}	
-	/**	
-	* @param La case de jeu ou l'on souhaite placer le bateau
-	* @return Le type Case qui contient la case de jeu entree avec le bateau maintenant place
-	*/
-	static Case PlacerPorteAvion3CopieAncienneDEBUGAENLEVER(Case LaCase){
-		
-			Coo Entree1 = new Coo();
-			Coo Entree2 = new Coo();
-			Coo Entree3 = new Coo();
-			Coo Entree4 = new Coo();
-			Coo Entree5 = new Coo();
-		
-			String bateau;
-			bateau = "porte_avion3";
-			char case1x;
-			int case1y;
-		
-			char case2x;
-			int case2y;
-		
-			char case3x;
-			int case3y;
-			
-			char case4x;
-			int case4y;
-			
-			char case5x;
-			int case5y;
-				
-			int compteur;
-			compteur = 1;
-				
-			boolean adjacent;
-				
-			adjacent = true; //Rechanger a false apres ceci est un debug !!
-				
-			do{
-		
-				//On demande la saisie de l'utilisateur
-				//
-				//On verifie la saisie
-				//
-				//Ici on les fixe manuellement pour ne pas avoir a tester chaque fois
-				
-				if (compteur > 1){
-						Ecran.afficher("\n Il y a deja un bateau place sur cette case");
-					}
-					
-				Coo CooSaisie = new Coo();
-				
-				Ecran.afficher("Veuillez entre un caractere : ");
-				case1x = Clavier.saisirChar();
-					
-				
-				
-				while(((int)case1x< 65) || ((int)case1x > 74)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-					case1x = Clavier.saisirChar();
-					}
-						
-				Ecran.afficher("Veuillez entre un entier : ");
-				case1y = Clavier.saisirInt();
-					
-					
-				while((case1y < 1) || (case1y > 10)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-					case1y = Clavier.saisirInt();
-					compteur ++;
-					}
-					
-					Entree1.x = case1x;
-					Entree1.y = case1y;
-		
-				//On appelle une sous fonction pour trouver la case qui correspond
-				
-				LaCase = Correspondance(LaCase, Entree1, bateau);
-		
-				//On demande une deuxieme saisie pour la seconde case
-				
-			
-		
-				//On demande la saisie de l'utilisateur
-				//
-				//On verifie la saisie
-				//
-				//Ici on les fixe manuellement pour ne pas avoir a tester chaque fois
-				
-				if (compteur > 1){
-						Ecran.afficher("\n Il y a deja un bateau place sur cette case");
-					}
-					
-				
-				Ecran.afficher("Veuillez entre un caractere : ");
-				case2x = Clavier.saisirChar();
-					
-				
-				
-				while(((int)case2x< 65) || ((int)case2x > 74)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-					case2x = Clavier.saisirChar();
-					}
-						
-				Ecran.afficher("Veuillez entre un entier : ");
-				case2y = Clavier.saisirInt();
-					
-					
-				while((case2y < 1) || (case2y > 10)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-					case2y = Clavier.saisirInt();
-					compteur ++;
-					}
-				
-				Entree2.x = case2x;
-				Entree2.y = case2y;
-		
-				//On appelle une sous fonction pour trouver la case qui correspond
-				
-				LaCase = Correspondance(LaCase, Entree2, bateau);
-		
-				//On rappelle la fonction pour trouver la case qui correspond
-				
-				LaCase = Correspondance(LaCase, Entree2, bateau);
-		
-				//On regarde si la case a deja un bateau
-				
-				//On regarde si cette case est adjacente a la premiere
-				
-				if (VerfAdj(Entree1, Entree2) == true){
-					adjacent = true;
-				}
-				else{Ecran.afficher("Erreur, les deux points entrees ne sont pas adjacent !");}
-			} while (adjacent == false);
-			
-				adjacent = true; // DEBUG rechanger a false apres
-				do {
-				//On demande la saisie de la troisieme case 
-				
-		
-				//On demande la saisie de l'utilisateur
-				//
-				//On verifie la saisie
-				//
-				//Ici on les fixe manuellement pour ne pas avoir a tester chaque fois
-				
-				if (compteur > 1){
-						Ecran.afficher("\n Il y a deja un bateau place sur cette case");
-					}
-					
-				
-				Ecran.afficher("Veuillez entre un caractere : ");
-				case3x = Clavier.saisirChar();
-					
-				
-				
-				while(((int)case3x< 65) || ((int)case3x > 74)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-					case3x = Clavier.saisirChar();
-					}
-						
-				Ecran.afficher("Veuillez entre un entier : ");
-				case3y = Clavier.saisirInt();
-					
-					
-				while((case3y < 1) || (case3y > 10)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-					case3y = Clavier.saisirInt();
-					compteur ++;
-					}
-				
-				Entree3.x = case3x;
-				Entree3.y = case3y;
-			
-				//On appelle la fonction pour trouver la case qui correspond
-			
-				LaCase = Correspondance(LaCase, Entree3, bateau);
-			
-				//On verifie quelle est bien adjacente a le deuxieme case saisie
-			
-				if (VerfAdj(Entree2, Entree3) == true){
-					adjacent = true;
-				}
-				else{Ecran.afficher("Erreur, les deux points entrees ne sont pas adjacent !");}
-			} while (adjacent == false);
-			
-			
-			
-			
-				return LaCase;
-				}
 	/**
 	* Sert a afficher la grille du jeu	
 	* @param La case de jeu que l'on souhaite afficher
@@ -3998,7 +3745,6 @@ static void JoueurContreJoueur(){
 		doubleHasard = Math.random();
 		doubleHasard = doubleHasard * 2;
 		
-		// DEBUG -> Ecran.afficher("\n", doubleHasard, "Est le double \n");
 		entierHasard = (int) doubleHasard; 
 		if (entierHasard == 1){
 			LunOuLautre = true;
@@ -4247,8 +3993,6 @@ static void JoueurContreJoueur(){
 			case4x = case1x;
 			case2y = case1y;
 			case3y = case1y;
-			
-
 					
 			if ((hasard1 == true) && (hasard2 == true)){
 				
@@ -4326,8 +4070,6 @@ static void JoueurContreJoueur(){
 		} while(bateauPlace == false);
 
 		return LaCase;
-	
-	
 	
 	}
 	/**
@@ -4469,12 +4211,6 @@ static void JoueurContreJoueur(){
 		} while(bateauPlace == false);
 
 		return LaCase;
-	
-	
-	
-
-
-
 	}
 	/**
 	* @param la grile de l'ordinateur
@@ -4524,9 +4260,7 @@ static void JoueurContreJoueur(){
 			case3y = case1y;
 			case5y = case1y;
 			case5x = case1x;
-			
-
-					
+							
 			if ((hasard1 == true) && (hasard2 == true)){
 				
 					case2y = case1y + 1;
@@ -4587,8 +4321,7 @@ static void JoueurContreJoueur(){
 			Entree2.x = case2x;
 			Entree2.y = case2y;
 			Entree3.x = case3x;
-			Entree3.y = case3y;
-			
+			Entree3.y = case3y;	
 
 			Ecran.afficher("PorteAv: 1 = ", case1x, case1y, " \n PorteAv: 2 = ", case2x, case2y, " \n PorteAv : 3 = ", case3x, case3y);
 				
@@ -4603,13 +4336,7 @@ static void JoueurContreJoueur(){
 
 		} while(bateauPlace == false);
 
-		return LaCase;
-	
-	
-	
-
-
-
+		return LaCase;	
 	}
 	/**
 	* @param la grile de l'ordinateur
@@ -4660,20 +4387,16 @@ static void JoueurContreJoueur(){
 			case5y = case1y;
 			case5x = case1x;
 			
-
-					
 			if ((hasard1 == true) && (hasard2 == true)){
 				
 					case2y = case1y + 1;
-					case3y = case1y + 2;
-					
+					case3y = case1y + 2;		
 					Ecran.afficher("hasard1 est vrai et hasard2 vrai");
 			}
 			
 			else if ((hasard1 == true) && (hasard2 == false)){
 					case2y = case1y - 1;
-					case3y = case1y - 2;
-					
+					case3y = case1y - 2;	
 					Ecran.afficher("hasard1 est vrai et hasard2 faux");
 			}
 			else if((hasard1 == true) && (hasard2 == false)){
@@ -4683,8 +4406,6 @@ static void JoueurContreJoueur(){
 				case2x = (char) transtypage;
 				transtypage ++;
 				case3x = (char) transtypage;
-	
-				
 				Ecran.afficher("hasard1 est faux et hasard2 vrai");
 			}
 			
@@ -4694,7 +4415,6 @@ static void JoueurContreJoueur(){
 				case2x = (char) transtypage;
 				transtypage = transtypage - 1 ;
 				case3x = (char) transtypage;
-				
 				}
 			
 			if (case2y == 11){
@@ -4739,12 +4459,6 @@ static void JoueurContreJoueur(){
 		} while(bateauPlace == false);
 
 		return LaCase;
-	
-	
-	
-
-
-
 	}
 	/**
 	* Sert a verifier que une case soit adjacente a une autre
@@ -4756,15 +4470,14 @@ static void JoueurContreJoueur(){
 		
 		//Declaration des variables
 
-		boolean verifCondition;
-		
+		boolean verifCondition;	
 		int test1;
 		int test2;
 		int testa;
 		int testb;
-
 		int Condition1;
 		int Condition2;
+
 		Condition1 = 0;
 		Condition2 = 0;
 		
@@ -4784,20 +4497,6 @@ static void JoueurContreJoueur(){
 		}
 
 		verifCondition = ((Condition1 == 1) ^ (Condition2 == 1));
-		/*DEBUG A ENLEVER
-		if (verifCondition == true){
-			System.out.println("\nDEBUG : Les 2 cases sont adjacentes\n");
-		}
-		*/
-		/* 
-		if (((((test1 - 1) == test2) || ((test1 + 1) == test2)) && (!((((testa - 1) == testb) || ((testa + 1) == testb))))) || (!((((test1 - 1) == test2) || ((test1 + 1) == test2))) && ((((testa - 1) == testb) || ((testa + 1) == testb))))){
-
-			Ecran.afficher("On a bien test1 == test2 + ou - \n");
-			Ecran.afficher("\n DEBUG : Les deux points sont biens adjacents\n");
-			verifCondition = true;
-			
-		}
-*/
 		return verifCondition;
 	}	
 	/**
@@ -4805,7 +4504,7 @@ static void JoueurContreJoueur(){
 	 * @return Rien
 	 */
 	static void AffichageGrilleEnnemi(Case LaCaseAffiche){
-		Ecran.afficher("\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |10|  \n");
+		Ecran.afficher("\n| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |10 |  \n");
 		Ecran.afficher("| A |");
 
 		if ((LaCaseAffiche.A1.aimed == true) && (LaCaseAffiche.A1.boat == true)){ 
@@ -5954,7 +5653,6 @@ static void JoueurContreJoueur(){
 			if (Entree.J10.boat == true){ 
 			   ApasBateau = true;}}  
 		     
-			// DEBUG A ENLEVER Ecran.afficherln(ApasBateau, " est la valeur de ApasBateau DEBUG \n");
 		return ApasBateau;
 	} 
 	/**
@@ -6365,11 +6063,6 @@ static void JoueurContreJoueur(){
 		 if ((Atester.x == Entree.J10.x) && (Atester.y == Entree.J10.y)){ 
 			if ((Entree.J10.aimed) == true){ 
 			   CeBateauEstVise = true;}}  
-
-
-
-
-
 		return CeBateauEstVise;
 
 	}
@@ -7086,15 +6779,6 @@ static void JoueurContreJoueur(){
 		    ApasBateau = false; 
 		 Entree.J10.typeBateau = leBateau; }
 		 } 
- 
- 
-
-
-	 
-
-
-		
-		return Entree;
-		
+		return Entree;	
 		}
 }	
