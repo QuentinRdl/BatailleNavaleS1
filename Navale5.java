@@ -5,7 +5,8 @@
 public class Navale5{
 		
 		public static void main(String args[]){
-			E3();
+			//E3();
+			AffichageMenuPrincipal();
 			
 	}
 	/**
@@ -54,49 +55,49 @@ public class Navale5{
 		Ecran.afficher("*------------------------------------------------*\n");
 		Ecran.afficher("*                   BATAILLE NAVALE                 *\n*------------------------------------------------*\n*                      Instructions :                     *\n*Selectionnez le mode de jeu au quel vous   *\n*voulez jouer en inserant le chiffre               *\n*correspondant dans le l'invite de commande*\n" );
 		Ecran.afficher("*1. Regles*\n");
-		Ecran.afficher("*2. Test du placement manuel des bateaux*\n");
-		Ecran.afficher("*3. Test du placement automatique des bateaux *\n");
-		Ecran.afficher("*4. Joueur seul contre Ordinateur*\n");
-		Ecran.afficher("*5. Joueur contre Ordinateur*\n");
-		Ecran.afficher("*6. Joueur contre Joueur*\n");
+		Ecran.afficher("*2. Test du placement automatique des bateaux *\n");
+		Ecran.afficher("*3. Joueur seul contre Ordinateur*\n");
+		Ecran.afficher("*4. Joueur contre Ordinateur*\n");
+		Ecran.afficher("*5. Joueur contre Joueur*\n");
 		Ecran.afficher("\nVeuilez saisir un nombre correspondant au mode de jeu souhaite\n");
-		SaisieUser = saisir();
+		SaisieUser = Clavier.saisirInt();
+		//Ce switch va lancer le mode de jeu correspondant suivant les valeurs indiques a l'affichage precedent
 		switch(SaisieUser){
 			case 1:
-				Ecran.afficher("Switch 1");
+				AfficherRegles();
+				AffichageMenuPrincipal();
 				break;
-
-			case 1:
-				Ecran.afficher("Switch 2");
+			case 2:
+				E2();
 				break;
-				
 			case 3:
-				Ecran.afficher("Switch 3");
-				break;
-			case 4:
-				Ecran.afficher("Switch 1");
+				E3();
 				break;
 
-			case 5:
-				Ecran.afficher("Switch 2");
+			case 4:
 				JoueurContreOrdi();
 				break;
 				
-			case 6:
-				Ecran.afficher("Switch 6");
+			case 5:
 				JoueurContreJoueur();
 				break;
 		}
 	
 	
+	}	
 	
 	
 	
 	
 	
-	
-	
-	
+	/**
+	 * Affiche les regles du jeu
+	 * @param Aucun
+	 * @return Aucun
+	 */
+	static void AfficherRegles(){
+		Ecran.afficher("\nVous avez le choix entre plusieurs modes de jeu, le mode 2 et 3 vous permet de tester le placement de bateaux et vous assurez qu'il marche dans les 2 cas.\nLe mode de jeu 4 vous permet de deviner l'emplacement des bateaux de l'ordinateur sans que celui ci puisse riposter.\nEt finalement le mode de jeu 5 et 6, vous permet de jouer une partie classique contre un ordinateur ou un autre joueur.\nDernierement vous avez dans les differents mode de jeu la possibilite de tricher, si vous faites le choix de tricher, la position des bateaux ennemi sera affiche a chaque tour.\n");
+	}	
 	
 	/**	
 	*Sert a lancer l'etape 3 du projet, soit le mode de jeu Joueur Contre Ordi sans riposte du dernier
