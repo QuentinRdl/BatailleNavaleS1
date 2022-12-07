@@ -310,10 +310,7 @@ static void JoueurContreJoueur(){
 			Ecran.afficher("\n Joueur 2 a gagne la partie !\n");
 		}
 		Ecran.afficherln("\n CaseJoueur2.torpilleur = ", CaseJoueur2.torpilleur, "\n CaseJoueur2.sous_marin1 = ", CaseJoueur2.sous_marin1, "\n CaseJoueur2.sous_marin2 = ", CaseJoueur2.sous_marin2, "\n CaseJoueur2.croiseur = ", CaseJoueur2.croiseur, "CaseJoueur2.porte_avion = ", CaseJoueur2.porte_avion);
-		
-		
-		
-		
+				
 	}
 	/**
 	 * Calcule les valeurs des differents bateaux pour voir si ils sont tous coules
@@ -2763,6 +2760,12 @@ static void JoueurContreJoueur(){
 				adjacent = true;
 			}
 			else{Ecran.afficher("\n Erreur, les deux points entrees ne sont pas adjacent ! \n");}
+			int condition1;
+			int condition2;
+			if(!(((case1x == case2x) && (case2x == case3x)) || ((case1y == case2y) && (case2y == case3y)))){
+			Ecran.afficher("Tous vos bateaux ne sont pas adjacents");
+			adjacent = false;
+			} 
 		} while (adjacent == false);
 		
 		LaCase = Correspondance(LaCase, Entree1, bateau);
