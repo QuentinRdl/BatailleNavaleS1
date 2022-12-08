@@ -5,7 +5,6 @@
 public class Navale5{
 		
 		public static void main(String args[]){
-			//E3();
 			AffichageMenuPrincipal();
 			
 	}
@@ -2138,7 +2137,7 @@ static void JoueurContreJoueur(){
 	* @return Le type Case qui contient la case de jeu entree avec le bateau maintenant place
 	*/
 	static Case PlacerSousMarin1(Case LaCase){
-		
+		Ecran.afficher("DEBUGG");	
 		Coo Entree1 = new Coo();
 		Coo Entree2 = new Coo();
 		Coo Entree3 = new Coo();
@@ -2177,26 +2176,9 @@ static void JoueurContreJoueur(){
 			
 		Coo CooSaisie = new Coo();
 		
-		Ecran.afficher("Veuillez entre un caractere : ");
-		case1x = Clavier.saisirChar();
-			
-		
-		
-		while(((int)case1x< 65) || ((int)case1x > 74)){
-			Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-			case1x = Clavier.saisirChar();
-			}
+		case1x = SaisieUserChar(); 
+		case1y = SaisieUserInt();	
 				
-		Ecran.afficher("Veuillez entre un entier : ");
-		case1y = Clavier.saisirInt();
-			
-			
-		while((case1y < 1) || (case1y > 10)){
-			Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-			case1y = Clavier.saisirInt();
-			compteur ++;
-			}
-			
 			Entree1.x = case1x;
 			Entree1.y = case1y;
 
@@ -2218,26 +2200,9 @@ static void JoueurContreJoueur(){
 				Ecran.afficher("\n Il y a deja un bateau place sur cette case");
 			}
 			
-		
-		Ecran.afficher("Veuillez entre un caractere : ");
-		case2x = Clavier.saisirChar();
-			
-		
-		
-		while(((int)case2x< 65) || ((int)case2x > 74)){
-			Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-			case2x = Clavier.saisirChar();
-			}
-				
-		Ecran.afficher("Veuillez entre un entier : ");
-		case2y = Clavier.saisirInt();
-			
-			
-		while((case2y < 1) || (case2y > 10)){
-			Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-			case2y = Clavier.saisirInt();
-			compteur ++;
-			}
+		Ecran.afficher("\nPlacement de la seconde case\n");	
+		case2x = SaisieUserChar(); 
+		case2y = SaisieUserInt();	
 		
 		Entree2.x = case2x;
 		Entree2.y = case2y;
@@ -2248,10 +2213,10 @@ static void JoueurContreJoueur(){
 		if (VerfAdj(Entree1, Entree2) == true){
 			adjacent = true;
 		}
-		else{Ecran.afficher("Erreur, les deux points entrees ne sont pas adjacent !");}
+		else{Ecran.afficher("\nErreur, les deux points entrees ne sont pas adjacent !");}
 	} while (adjacent == false);
 	
-		adjacent = true; // DEBUG rechanger a false apres
+		adjacent = false; // DEBUG rechanger a false apres
 		do {
 		//On demande la saisie de la troisieme case 
 		
@@ -2262,26 +2227,9 @@ static void JoueurContreJoueur(){
 				Ecran.afficher("\n Il y a deja un bateau place sur cette case");
 			}
 			
-		
-		Ecran.afficher("Veuillez entre un caractere : ");
-		case3x = Clavier.saisirChar();
-			
-		
-		
-		while(((int)case3x< 65) || ((int)case3x > 74)){
-			Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-			case3x = Clavier.saisirChar();
-			}
-				
-		Ecran.afficher("Veuillez entre un entier : ");
-		case3y = Clavier.saisirInt();
-			
-			
-		while((case3y < 1) || (case3y > 10)){
-			Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-			case3y = Clavier.saisirInt();
-			compteur ++;
-			}
+		Ecran.afficher("\nPlacement de la 3eme case\n");
+		case3x = SaisieUserChar(); 
+		case3y = SaisieUserInt();	
 		
 		Entree3.x = case3x;
 		Entree3.y = case3y;
@@ -2362,25 +2310,14 @@ static void JoueurContreJoueur(){
 			Coo CooSaisie = new Coo();
 		
 			Ecran.afficher("\nPlacement de la 1ere case\nVeuillez entre un caractere : ");
-			case1x = Clavier.saisirChar();
+
+			case1x = SaisieUserChar(); 
+			case1y = SaisieUserInt();	
 			
-			while(((int)case1x< 65) || ((int)case1x > 74)){
-				Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct");
-				case1x = Clavier.saisirChar();
-				}
+			Entree1.x = case1x;
+			Entree1.y = case1y;	
 				
-			Ecran.afficher("\nVeuillez entre un entier : ");
-			case1y = Clavier.saisirInt();
-				
-			while((case1y < 1) || (case1y > 10)){
-				Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct");
-				case1y = Clavier.saisirInt();
-				}
-			
-				Entree1.x = case1x;
-				Entree1.y = case1y;
-				
-				BateauEn1 = BateauOuPas(LaCase, Entree1);
+			BateauEn1 = BateauOuPas(LaCase, Entree1);
 					
 				compteur ++;
 			}while(BateauEn1 == true);
@@ -2395,20 +2332,8 @@ static void JoueurContreJoueur(){
 			
 			
 		Ecran.afficher("\nPlacement de la seconde case\nVeuillez entre un caractere : ");
-		case2x = Clavier.saisirChar();
-				
-		while(((int)case2x< 65) || ((int)case2x > 74)){
-			Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct\n");
-			case2x = Clavier.saisirChar();
-			}
-				
-		Ecran.afficher("\nVeuillez entre un entier : ");
-		case2y = Clavier.saisirInt();
-				
-		while((case2y < 1) || (case2y > 10)){
-			Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct\n");
-			case2y = Clavier.saisirInt();
-		}
+			case2x = SaisieUserChar(); 
+			case2y = SaisieUserInt();	
 		
 		Entree2.x = case2x;
 		Entree2.y = case2y;
@@ -2434,31 +2359,17 @@ static void JoueurContreJoueur(){
 				}
 			
 			
-		Ecran.afficher("\nPlacement de la troisieme case\n");
-		//On demande la saisie de l'utilisateur
-		Ecran.afficher("\nVeuillez entre un caractere : ");
-		case3x = Clavier.saisirChar();
-				
-		while(((int)case3x< 65) || ((int)case3x > 74)){
-			Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct\n");
-			case3x = Clavier.saisirChar();
-		}
-				
-		Ecran.afficher("\nVeuillez entre un entier : ");
-		case3y = Clavier.saisirInt();
-			
-		while((case3y < 1) || (case3y > 10)){
-			Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct\n");
-			case3y = Clavier.saisirInt();
+			Ecran.afficher("\nPlacement de la troisieme case\n");
+			//On demande la saisie de l'utilisateur
+			case3x = SaisieUserChar(); 
+			case3y = SaisieUserInt();	
+		
+			Entree3.x = case3x;
+			Entree3.y = case3y;
+		
+			//On regarde si la case a deja un bateau
+			BateauEn3 = BateauOuPas(LaCase, Entree3);
 			compteur ++;
-		}
-		
-		Entree3.x = case3x;
-		Entree3.y = case3y;
-		
-				//On regarde si la case a deja un bateau
-				BateauEn3 = BateauOuPas(LaCase, Entree3);
-				compteur ++;
 			}while(BateauEn3 == true);
 	
 		//On verifie quelle est bien adjacente a le deuxieme case saisie
@@ -2480,22 +2391,8 @@ static void JoueurContreJoueur(){
 			
 		Ecran.afficher("\nPlacement de la quatrieme case\n");
 		//On demande la saisie de l'utilisateur	
-		Ecran.afficher("\nVeuillez entre un caractere : ");
-		case4x = Clavier.saisirChar();	
-		
-		while(((int)case4x< 65) || ((int)case4x > 74)){
-			Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct\n");
-			case4x = Clavier.saisirChar();
-			}
-				
-		Ecran.afficher("\nVeuillez entre un entier : ");
-		case4y = Clavier.saisirInt();
-				
-		while((case4y < 1) || (case4y > 10)){
-			Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct\n");
-			case4y = Clavier.saisirInt();
-			compteur ++;
-			}
+			case4x = SaisieUserChar(); 
+			case4y = SaisieUserInt();	
 		
 		Entree4.x = case4x;
 		Entree4.y = case4y;
@@ -2522,25 +2419,11 @@ static void JoueurContreJoueur(){
 				}
 			
 			
-		Ecran.afficher("\nPlacement de la cinquieme et derniere case\n");
-		Ecran.afficher("\nVeuillez entre un caractere : ");
-		case5x = Clavier.saisirChar();	
-		
-		while(((int)case5x< 65) || ((int)case5x > 74)){
-			Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct\n");
-			case5x = Clavier.saisirChar();
-			}
-				
-		Ecran.afficher("\nVeuillez entre un entier : ");
-		case5y = Clavier.saisirInt();
-			
-		while((case5y < 1) || (case5y > 10)){
-			Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct\n");
-			case5y = Clavier.saisirInt();
-			}
-		
-		Entree5.x = case5x;
-		Entree5.y = case5y;
+				Ecran.afficher("\nPlacement de la cinquieme et derniere case\n");
+				case5x = SaisieUserChar(); 
+				case5y = SaisieUserInt();	
+				Entree5.x = case5x;
+				Entree5.y = case5y;
 		
 				//On regarde si la case a deja un bateau
 				BateauEn5 = BateauOuPas(LaCase, Entree5);
@@ -2552,7 +2435,6 @@ static void JoueurContreJoueur(){
 		if (VerfAdj(Entree4, Entree5) == true){
 			adjacent = true;
 		}
-
 
 		if (!(((case1x == case2x) && (case2x == case3x) && (case3x == case4x) && (case4x == case5x)) || ((case1x == case2x) && (case2x == case3x) && (case3x == case4x) && (case4x == case5x)))){
 			adjacent = false;
@@ -2579,8 +2461,6 @@ static void JoueurContreJoueur(){
 			Coo Entree1 = new Coo();
 			Coo Entree2 = new Coo();
 			Coo Entree3 = new Coo();
-			Coo Entree4 = new Coo();
-			Coo Entree5 = new Coo();
 			
 			String bateau;
 			bateau = "porte_avion2";
@@ -2593,13 +2473,7 @@ static void JoueurContreJoueur(){
 			
 			char case3x;
 			int case3y;
-			
-			char case4x;
-			int case4y;
-			
-			char case5x;
-			int case5y;
-			
+				
 			int compteur;
 			compteur = 0;
 			
@@ -2613,8 +2487,7 @@ static void JoueurContreJoueur(){
 			BateauEn2 = false;
 			BateauEn3 = false;
 
-			adjacent = false; //Rechanger a false apres ceci est un debug !!
-
+			adjacent = false; 
 			Ecran.afficher("\n Placement du 1er sous - marin ! \n");
 			
 			do{
@@ -2623,6 +2496,7 @@ static void JoueurContreJoueur(){
 
 				do{
 	
+				Coo CooSaisie = new Coo();
 			//On demande la saisie de l'utilisateur
 			//
 			//On verifie la saisie
@@ -2632,24 +2506,10 @@ static void JoueurContreJoueur(){
 				if (compteur > 0){
 						Ecran.afficher("\nErreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 					}
-					
-				Coo CooSaisie = new Coo();
-				
-				Ecran.afficher("\nPlacement de la 1ere case\nVeuillez entre un caractere : ");
-				case1x = Clavier.saisirChar();
-									
-				while(((int)case1x< 65) || ((int)case1x > 74)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-					case1x = Clavier.saisirChar();
-					}
 						
-				Ecran.afficher("Veuillez entre un entier : ");
-				case1y = Clavier.saisirInt();
-					
-				while((case1y < 1) || (case1y > 10)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-					case1y = Clavier.saisirInt();
-					}
+				Ecran.afficher("\nPlacement de la 1ere case\n");
+				case1x = SaisieUserChar();
+				case1y = SaisieUserInt();
 					
 					Entree1.x = case1x;
 					Entree1.y = case1y;
@@ -2666,32 +2526,14 @@ static void JoueurContreJoueur(){
 			compteur = 0;
 			do{
 				
-			//On demande la saisie de l'utilisateur
-			//
-			//On verifie la saisie
-			//
-			//Ici on les fixe manuellement pour ne pas avoir a tester chaque fois
 				
 				if (compteur > 0){
 					Ecran.afficher("\nErreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 					}
 					
-				Ecran.afficher("\nPlacement de la 2eme case\nVeuillez entre un caractere : ");
-				case2x = Clavier.saisirChar();
-						
-				while(((int)case2x< 65) || ((int)case2x > 74)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-					case2x = Clavier.saisirChar();
-					}
-						
-				Ecran.afficher("Veuillez entre un entier : ");
-				case2y = Clavier.saisirInt();
-					
-				while((case2y < 1) || (case2y > 10)){
-					Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-					case2y = Clavier.saisirInt();
-					compteur ++;
-					}
+				Ecran.afficher("\nPlacement de la 2eme case\n");
+				case2x = SaisieUserChar();
+				case2y = SaisieUserInt();
 				
 				Entree2.x = case2x;
 				Entree2.y = case2y;
@@ -2715,23 +2557,10 @@ static void JoueurContreJoueur(){
 					Ecran.afficher("\nErreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 				}	
 			
-			Ecran.afficher("\nPlacement de la 3eme case\nVeuillez entre un caractere : ");
-			case3x = Clavier.saisirChar();
-				
-			while(((int)case3x< 65) || ((int)case3x > 74)){
-				Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct\n");
-				case3x = Clavier.saisirChar();
-				}
-					
-			Ecran.afficher("\nVeuillez entre un entier : ");
-			case3y = Clavier.saisirInt();
-				
-			while((case3y < 1) || (case3y > 10)){
-				Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct\n");
-				case3y = Clavier.saisirInt();
-				compteur ++;
-				}
-			
+			Ecran.afficher("\nPlacement de la 3eme case\n");
+			case3x = SaisieUserChar();
+			case3y = SaisieUserInt();
+
 			Entree3.x = case3x;
 			Entree3.y = case3y;
 			
@@ -2764,8 +2593,6 @@ static void JoueurContreJoueur(){
 				Coo Entree1 = new Coo();
 				Coo Entree2 = new Coo();
 				Coo Entree3 = new Coo();
-				Coo Entree4 = new Coo();
-				Coo Entree5 = new Coo();
 				
 				String bateau;
 				bateau = "porte_avion3";
@@ -2778,13 +2605,7 @@ static void JoueurContreJoueur(){
 				
 				char case3x;
 				int case3y;
-				
-				char case4x;
-				int case4y;
-				
-				char case5x;
-				int case5y;
-				
+					
 				int compteur;
 				compteur = 0;
 				
@@ -2798,8 +2619,7 @@ static void JoueurContreJoueur(){
 				BateauEn2 = false;
 				BateauEn3 = false;
 	
-				adjacent = false; //Rechanger a false apres ceci est un debug !!
-	
+				adjacent = false;	
 				Ecran.afficher("\n Placement du 2eme sous - marin ! \n");
 				
 				do{
@@ -2818,24 +2638,12 @@ static void JoueurContreJoueur(){
 						
 					Coo CooSaisie = new Coo();
 					
-					Ecran.afficher("\nPlacement de la 1ere case\nVeuillez entre un caractere : ");
-					case1x = Clavier.saisirChar();
-								
-					while(((int)case1x< 65) || ((int)case1x > 74)){
-						Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-						case1x = Clavier.saisirChar();
-						}
-							
-					Ecran.afficher("Veuillez entre un entier : ");
-					case1y = Clavier.saisirInt();
+					Ecran.afficher("\nPlacement de la 1ere case\n");
+					case1x = SaisieUserChar();
+					case1y = SaisieUserInt();
 						
-					while((case1y < 1) || (case1y > 10)){
-						Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-						case1y = Clavier.saisirInt();
-						}
-						
-						Entree1.x = case1x;
-						Entree1.y = case1y;
+					Entree1.x = case1x;
+					Entree1.y = case1y;
 			
 					//On appelle une sous fonction pour trouver la case qui correspond
 					BateauEn1 = BateauOuPas(LaCase, Entree1);
@@ -2854,21 +2662,8 @@ static void JoueurContreJoueur(){
 						}
 							
 					Ecran.afficher("\nPlacement de la 2eme case\nVeuillez entre un caractere : ");
-					case2x = Clavier.saisirChar();	
-					
-					while(((int)case2x< 65) || ((int)case2x > 74)){
-						Ecran.afficher("Erreur de saisie, veuillez entrer un char correct");
-						case2x = Clavier.saisirChar();
-						}
-							
-					Ecran.afficher("Veuillez entre un entier : ");
-					case2y = Clavier.saisirInt();
-						
-					while((case2y < 1) || (case2y > 10)){
-						Ecran.afficher("Erreur de saisie, veuillez entrer un entier correct");
-						case2y = Clavier.saisirInt();
-						compteur ++;
-						}
+					case2x = SaisieUserChar();
+					case2y = SaisieUserInt();
 					
 					Entree2.x = case2x;
 					Entree2.y = case2y;
@@ -2893,21 +2688,8 @@ static void JoueurContreJoueur(){
 					}
 					
 				Ecran.afficher("\nPlacement de la 3 eme case\nVeuillez entre un caractere : ");
-				case3x = Clavier.saisirChar();
-					
-				while(((int)case3x< 65) || ((int)case3x > 74)){
-					Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct\n");
-					case3x = Clavier.saisirChar();
-					}
-						
-				Ecran.afficher("\nVeuillez entre un entier : ");
-				case3y = Clavier.saisirInt();
-					
-				while((case3y < 1) || (case3y > 10)){
-					Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct\n");
-					case3y = Clavier.saisirInt();
-					compteur ++;
-					}
+				case3x = SaisieUserChar();
+				case3y = SaisieUserInt();
 				
 				Entree3.x = case3x;
 				Entree3.y = case3y;
@@ -6735,5 +6517,34 @@ static void JoueurContreJoueur(){
 		 Entree.J10.typeBateau = leBateau; }
 		 } 
 		return Entree;	
+		}
+	/**
+	 * @param Aucun
+	 * @return Un entier saisie par l'utilisateur compris entre 1 et 10 inclus
+	 */
+	static int SaisieUserInt(){
+		int entierSaisi;
+		Ecran.afficher("\nVeuilez saisir un entier\n");
+		entierSaisi = Clavier.saisirInt();
+		while ((entierSaisi < 1) || (entierSaisi > 10)){
+			Ecran.afficher("\nErreur, l'entier saisi n'est pas compris entre 1 et 10 ! Veuillez recommencez la saisie\n");
+		entierSaisi = Clavier.saisirInt();}
+		
+		return entierSaisi;
+		}
+
+	/**
+	 * @param Aucun
+	 * @return Un char saisie par l'utilisateur qui correspond a la grille
+	 */
+	static char SaisieUserChar(){
+		char charSaisi;
+		Ecran.afficher("\nVeuilez saisir un char\n");
+		charSaisi = Clavier.saisirChar();
+		while (((int)charSaisi < 65) || ((int)charSaisi > 74)){
+			Ecran.afficher("\nErreur, le char saisie n'est pas dans la grille ! Veuillez recommencez la saisie\n");
+		charSaisi = Clavier.saisirChar();
+		}		
+		return charSaisi;
 		}
 }	
