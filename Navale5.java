@@ -48,13 +48,18 @@ public class Navale5{
 	static void AffichageMenuPrincipal(){
 		int SaisieUser;
 		Ecran.afficher("*------------------------------------------------*\n");
-		Ecran.afficher("*                   BATAILLE NAVALE                 *\n*------------------------------------------------*\n*                      Instructions :                     *\n*Selectionnez le mode de jeu au quel vous   *\n*voulez jouer en inserant le chiffre               *\n*correspondant dans le l'invite de commande*\n" );
-		Ecran.afficher("*1. Regles*\n");
-		Ecran.afficher("*2. Test du placement automatique des bateaux *\n");
-		Ecran.afficher("*3. Joueur seul contre Ordinateur*\n");
-		Ecran.afficher("*4. Joueur contre Ordinateur*\n");
-		Ecran.afficher("*5. Joueur contre Joueur*\n");
-		Ecran.afficher("\nVeuilez saisir un nombre correspondant au mode de jeu souhaite\n");
+		Ecran.afficher("*                   BATAILLE NAVALE              *\n*------------------------------------------------*\n*                  Instructions :                *\n*Veuilez saisir un nombre correspondant au mode  *\n*de jeu souhaite                                 *\n" );
+
+		Ecran.afficher("*------------------------------------------------*\n");
+		Ecran.afficher("*                                                *\n");
+		Ecran.afficher("* 1. Regles                                      *\n");
+		Ecran.afficher("* 2. Test du placement automatique des bateaux   *\n");
+		Ecran.afficher("* 3. Joueur seul contre Ordinateur               *\n");
+		Ecran.afficher("* 4. Joueur contre Ordinateur                    *\n");
+		Ecran.afficher("* 5. Joueur contre Joueur                        *\n");
+		Ecran.afficher("*                                                *\n");
+		Ecran.afficher("*------------------------------------------------*\n");
+
 		SaisieUser = Clavier.saisirInt();
 		//Ce switch va lancer le mode de jeu correspondant suivant les valeurs indiques a l'affichage precedent
 		switch(SaisieUser){
@@ -282,7 +287,7 @@ static void JoueurContreJoueur(){
 			AffichageGrilleEnnemi(CaseJoueur1);
 			Ecran.afficher("\n ==================================================== \n");
 
-			Ecran.afficher("\n Il reste  = ", (totalPointsJoueur1 - 1), "cases sur la grille de joueur 1 et ", totalPointsJoueur2, "cases sur la grille de joueur 2\n");
+			Ecran.afficher("\n Il reste  = ", (totalPointsJoueur1 - 1), " cases bateaux sur la grille de joueur 1 et ", totalPointsJoueur2, " cases bateaux sur la grille de joueur 2\n");
 		}
 		
 		if (totalPointsJoueur2 > 1){
@@ -292,7 +297,6 @@ static void JoueurContreJoueur(){
 		else{
 			Ecran.afficher("\n Joueur 2 a gagne la partie !\n");
 		}
-		Ecran.afficherln("\n CaseJoueur2.torpilleur = ", CaseJoueur2.torpilleur, "\n CaseJoueur2.sous_marin1 = ", CaseJoueur2.sous_marin1, "\n CaseJoueur2.sous_marin2 = ", CaseJoueur2.sous_marin2, "\n CaseJoueur2.croiseur = ", CaseJoueur2.croiseur, "CaseJoueur2.porte_avion = ", CaseJoueur2.porte_avion);
 				
 	}
 	/**
@@ -2473,6 +2477,7 @@ static void JoueurContreJoueur(){
 			compteur = 0;
 			
 			boolean adjacent;
+			boolean full_adjacent;
 
 			boolean BateauEn1;
 			boolean BateauEn2;
@@ -2483,8 +2488,9 @@ static void JoueurContreJoueur(){
 			BateauEn3 = false;
 
 			adjacent = false; 
-			Ecran.afficher("\n Placement du 1er sous - marin ! \n");
+			Ecran.afficher("\nPlacement du 1er sous - marin ! \n");
 			
+			do{
 			do{
 
 				compteur = 0;
@@ -2551,7 +2557,7 @@ static void JoueurContreJoueur(){
 			if (compteur > 0){
 					Ecran.afficher("\nErreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 				}	
-			
+			full_adjacent = true;	
 			Ecran.afficher("\nPlacement de la 3eme case\n");
 			case3x = SaisieUserChar();
 			case3y = SaisieUserInt();
@@ -2564,13 +2570,13 @@ static void JoueurContreJoueur(){
 			if (VerfAdj(Entree2, Entree3) == true){
 				adjacent = true;
 			}
-			else{Ecran.afficher("\n Erreur, les deux points entrees ne sont pas adjacent ! \n");}
+			else{Ecran.afficher("\nErreur, les deux points entrees ne sont pas adjacent ! \n");}
 			if(!(((case1x == case2x) && (case2x == case3x)) || ((case1y == case2y) && (case2y == case3y)))){
-			Ecran.afficher("\n Erreur ! Tous vos bateaux ne sont pas adjacents\n");
-			adjacent = false;
+				Ecran.afficher("\nErreur ! Tous vos bateaux ne sont pas adjacents\n");
+				full_adjacent = false;
 			} 
 		} while (adjacent == false);
-		
+		} while (full_adjacent == false);	
 		LaCase = Correspondance(LaCase, Entree1, bateau);
 		LaCase = Correspondance(LaCase, Entree2, bateau);
 		LaCase = Correspondance(LaCase, Entree3, bateau);	
@@ -2605,34 +2611,34 @@ static void JoueurContreJoueur(){
 				compteur = 0;
 				
 				boolean adjacent;
-	
+				boolean full_adjacent;	
 				boolean BateauEn1;
 				boolean BateauEn2;
 				boolean BateauEn3;
 	
 				BateauEn1 = false;
 				BateauEn2 = false;
-				BateauEn3 = false;
-	
-				adjacent = false;	
-				Ecran.afficher("\n Placement du 2eme sous - marin ! \n");
-				
-				do{
-	
-					compteur = 0;
-	
+				BateauEn3 = false;	
+				adjacent = false;
+
+				Ecran.afficher("\nPlacement du 2eme sous - marin ! \n");
+				do{	
 					do{
+						compteur = 0;
 	
-						Ecran.afficher("Placement de la premiere case du sous marin");
+						do{
+	
+							Ecran.afficher("\nPlacement de la premiere case du sous marin\n");
 		
 				//On demande la saisie de l'utilisateur
 				
 					if (compteur > 0){
-							Ecran.afficher("\n Erreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
+							Ecran.afficher("\nErreur, il y a deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 						}
 						
 					Coo CooSaisie = new Coo();
 					
+					full_adjacent = true;
 					Ecran.afficher("\nPlacement de la 1ere case\n");
 					case1x = SaisieUserChar();
 					case1y = SaisieUserInt();
@@ -2690,17 +2696,17 @@ static void JoueurContreJoueur(){
 				Entree3.y = case3y;
 
 				//On verifie quelle est bien adjacente a le deuxieme case saisie
-			
+				full_adjacent = true;	
 				if (VerfAdj(Entree2, Entree3) == true){
 					adjacent = true;
 				}
 				else{Ecran.afficher("\n Erreur, les deux points entrees ne sont pas adjacent ! \n");}
 			if(!(((case1x == case2x) && (case2x == case3x)) || ((case1y == case2y) && (case2y == case3y)))){
-				Ecran.afficher("\n Erreur ! Tous vos bateaux ne sont pas adjacents\n");
-				adjacent = false;
+					Ecran.afficher("\nErreur ! Tous vos bateaux ne sont pas adjacents\n");
+					full_adjacent = false;
 			} 
 			} while (adjacent == false);
-			
+			} while (full_adjacent == false);
 			LaCase = Correspondance(LaCase, Entree1, bateau);
 			LaCase = Correspondance(LaCase, Entree2, bateau);
 			LaCase = Correspondance(LaCase, Entree3, bateau);	
