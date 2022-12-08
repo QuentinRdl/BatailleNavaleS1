@@ -19,7 +19,6 @@ public class Navale5{
 		int saisieCorrect;
 		saisieCorrect = 0;
 		
-
 		char Saisie;
 		Saisie = 'a';
 		do{
@@ -1647,8 +1646,6 @@ static void JoueurContreJoueur(){
 	NewCase.J9 = J9; 
 	NewCase.J10 = J10; 
 
-
-	Ecran.afficherln("\n La case J8 est : ",NewCase.J8.x ,"\n");
 	return NewCase;	
 }
 	/**
@@ -1817,22 +1814,22 @@ static void JoueurContreJoueur(){
 					Ecran.afficher("soit, il y a peut etre deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 				}
 					
-				Ecran.afficher("\n Placement de la premiere case\n Veuillez entre un caractere : ");
+				Ecran.afficher("\nPlacement de la premiere case\n Veuillez entre un caractere : ");
 				case1x = Clavier.saisirChar();
 					
 				
 				
 				while(((int)case1x< 65) || ((int)case1x > 74)){
-					Ecran.afficher(" \n Erreur de saisie, veuillez entrer un char correct");
+					Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct");
 					case1x = Clavier.saisirChar();
 					}
 					
-				Ecran.afficher(" \n Veuillez entre un entier : ");
+				Ecran.afficher("\nVeuillez entre un entier : ");
 				case1y = Clavier.saisirInt();
 				
 				
 				while((case1y < 1) || (case1y > 10)){
-					Ecran.afficher(" \n Erreur de saisie, veuillez entrer un entier correct");
+					Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct");
 					case1y = Clavier.saisirInt();
 					}
 				
@@ -1842,7 +1839,7 @@ static void JoueurContreJoueur(){
 				BateauEn1 = BateauOuPas(LaCase, Entree1);
 			}while(BateauEn1 == true);
 		
-		Ecran.afficher("\n Premiere case placee en ", Entree1.x,Entree1.y ,"\n Placement de la seconde case \n");
+		Ecran.afficher("\nPremiere case placee en ", Entree1.x,Entree1.y ,"\n Placement de la seconde case \n");
 
 		compteur = 0;
 		do{
@@ -1851,20 +1848,20 @@ static void JoueurContreJoueur(){
             }
 			//On demande une deuxieme saisie pour la seconde case
 			
-			Ecran.afficher(" \n Veuillez entre un caractere : ");
+			Ecran.afficher("Placement de la 2eme case\nVeuillez entre un caractere : ");
 			case2x = Clavier.saisirChar();
 				
 			while(((int)case2x< 65) || ((int)case2x > 74)){
-				Ecran.afficher(" \n Erreur de saisie, veuillez entrer un char correct");
+				Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct");
 				case2x = Clavier.saisirChar();
 				}
 				
-			Ecran.afficher(" \n Veuillez entre un entier : ");
+			Ecran.afficher("\nVeuillez entre un entier : ");
 			case2y = Clavier.saisirInt();
 			
 			
 			while((case2y < 1) || (case2y > 10)){
-				Ecran.afficher(" \n Erreur de saisie, veuillez entrer un entier correct");
+				Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct");
 				case1y = Clavier.saisirInt();
 				}
 			
@@ -1891,20 +1888,20 @@ static void JoueurContreJoueur(){
 					Ecran.afficher("soit, il y a peut etre deja un bateau place sur cette case, veuillez resaisir des coordonees valides ! \n");
 				}
 				
-				Ecran.afficher("\n Veuillez entre un caractere : ");
+				Ecran.afficher("\nPlacement de la 3eme case\nVeuillez entre un caractere : ");
 				case3x = Clavier.saisirChar();
 					
 				while(((int)case3x< 65) || ((int)case3x > 74)){
-					Ecran.afficher(" \n Erreur de saisie, veuillez entrer un char correct");
+					Ecran.afficher("\nErreur de saisie, veuillez entrer un char correct");
 					case3x = Clavier.saisirChar();
 					}
 					
-				Ecran.afficher(" \n Veuillez entre un entier : ");
+				Ecran.afficher("\nVeuillez entre un entier : ");
 				case3y = Clavier.saisirInt();
 				
 				
 				while((case3y < 1) || (case3y > 10)){
-					Ecran.afficher("\n Erreur de saisie, veuillez entrer un entier correct");
+					Ecran.afficher("\nErreur de saisie, veuillez entrer un entier correct");
 					case3y = Clavier.saisirInt();
 					}
 				
@@ -1920,9 +1917,9 @@ static void JoueurContreJoueur(){
 			if (VerfAdj(Entree2, Entree3) == true){
 				adjacent = true;
 			}
-			else{Ecran.afficher(" \n Erreur, les deux points entrees ne sont pas adjacent !");}
+			else{Ecran.afficher("\nErreur, les deux points entrees ne sont pas adjacent !");}
 	} while (adjacent == false);
-	Ecran.afficher("\n Troisieme case placee en ", Entree3.x,Entree3.y ,"\n Placement de la derniere case \n");
+	Ecran.afficher("\nTroisieme case placee en ", Entree3.x,Entree3.y ,"\n Placement de la derniere case \n");
 	compteur = 0;
 
 	adjacent = false;
@@ -1933,20 +1930,20 @@ static void JoueurContreJoueur(){
 				}
 				//On demande la saisie de la troisieme case 
 				
-				Ecran.afficher(" \n Veuillez entre un caractere : ");
+				Ecran.afficher("\nPlacement de la 4eme case \nVeuillez entre un caractere : ");
 				case4x = Clavier.saisirChar();
 					
 				while(((int)case4x< 65) || ((int)case4x > 74)){
-					Ecran.afficher(" \n Erreur de saisie, veuillez entrer un char correct");
+					Ecran.afficher(" \nErreur de saisie, veuillez entrer un char correct");
 					case4x = Clavier.saisirChar();
 					}
 					
-				Ecran.afficher(" \n Veuillez entre un entier : ");
+				Ecran.afficher(" \nVeuillez entre un entier : ");
 				case4y = Clavier.saisirInt();
 				
 				
 				while((case4y < 1) || (case4y > 10)){
-					Ecran.afficher(" \n Erreur de saisie, veuillez entrer un entier correct");
+					Ecran.afficher(" \nErreur de saisie, veuillez entrer un entier correct");
 					case4y = Clavier.saisirInt();
 					}
 				
@@ -1962,6 +1959,9 @@ static void JoueurContreJoueur(){
 			adjacent = true;
 		}
 		else{Ecran.afficher("\n Erreur, les deux points entrees ne sont pas adjacent ! \n");}
+		if (!(((case1x == case2x) && (case2x == case3x) && (case3x == case4x)) || ((case1x == case2x) && (case2x == case3x) && (case3x == case4x)))){
+		adjacent = false;
+		Ecran.afficher("\nErreur, tous vos bateaux ne sont pas sur la meme ligne\n");}
 	} while (adjacent == false);
 	//On affecte les cases correspondants aux valeurs saisies	
 	LaCase = Correspondance(LaCase, Entree1, bateau);
@@ -2554,6 +2554,9 @@ static void JoueurContreJoueur(){
 		}
 
 
+		if (!(((case1x == case2x) && (case2x == case3x) && (case3x == case4x) && (case4x == case5x)) || ((case1x == case2x) && (case2x == case3x) && (case3x == case4x) && (case4x == case5x)))){
+			adjacent = false;
+			Ecran.afficher("\nErreur ! Tous vos bateaux ne sont pas adjacents !\n");}
 	} while (adjacent == false);
 	
 		
@@ -3745,7 +3748,6 @@ static void JoueurContreJoueur(){
 		
 		hasard1 = ConditHasard();
 		hasard2 = ConditHasard();
-		Ecran.afficherln("\n hasard 1 :" ,hasard1 , "\n hasard 2 :" ,hasard2);
 		
 		Coo Entree1 = new Coo();
 		Coo Entree2 = new Coo();
@@ -3774,19 +3776,16 @@ static void JoueurContreJoueur(){
 		if ((hasard1 == true) && (hasard2 == true)){
 			
 				case2y = case1y + 1;
-				Ecran.afficher("hasard1 est vrai et hasard2 vrai");
 		}
 			
 		else if ((hasard1 == true) && (hasard2 == false)){
 				case2y = case1y - 1; 
-				Ecran.afficher("hasard1 est vrai et hasard2 faux");
 		}
 		else if((hasard1 == true) && (hasard2 == false)){
 			
 			transtypage = (int) case1x;
 			transtypage ++;
 			case2x = (char) transtypage;
-			Ecran.afficher("hasard1 est faux et hasard2 vrai");
 		}
 			
 		else{
@@ -3807,10 +3806,7 @@ static void JoueurContreJoueur(){
 			}
 				
 		transtypage = (int) case2x;
-		
-		Ecran.afficher("\n Le x est : ", case2x, " ", case1x ,"\n");
-		Ecran.afficher("\n Le y est : ", case2y, " ", case1y ,"\n");
-	
+			
 		Entree2.x = case2x;
 		Entree2.y = case2y;
 	
@@ -3972,14 +3968,12 @@ static void JoueurContreJoueur(){
 					case2y = case1y + 1;
 					case3y = case1y + 2;
 					case4y = case1y + 3;
-					Ecran.afficher("hasard1 est vrai et hasard2 vrai");
 			}
 			
 			else if ((hasard1 == true) && (hasard2 == false)){
 					case2y = case1y - 1;
 					case3y = case1y - 2;
 					case4y = case1y - 3;
-					Ecran.afficher("hasard1 est vrai et hasard2 faux");
 			}
 			else if((hasard1 == true) && (hasard2 == false)){
 			
@@ -3990,7 +3984,6 @@ static void JoueurContreJoueur(){
 				case3x = (char) transtypage;
 				transtypage ++;
 				case4x = (char) transtypage;
-				Ecran.afficher("hasard1 est faux et hasard2 vrai");
 			}
 			
 			else{
@@ -4029,7 +4022,6 @@ static void JoueurContreJoueur(){
 			Entree4.x = case4x;
 			Entree4.y = case4y;
 
-			Ecran.afficher("Croiseur: 1 = ", case1x, case1y, " \n Croiseur: 2 = ", case2x, case2y, " \n Croiseur : 3 = ", case3x, case3y ,"\n Croiseur : 4 = ", case4x, case4y);
 				
 			if ((((BateauOuPas(LaCase, Entree1) == false) && (BateauOuPas(LaCase, Entree2) == false)) && (BateauOuPas(LaCase, Entree3) == false)) && ((BateauOuPas(LaCase, Entree4) == false))){	
 			
@@ -4102,7 +4094,6 @@ static void JoueurContreJoueur(){
 					case3y = case1y + 2;
 					case4y = case1y + 3;
 					case5y = case1y + 4;
-					Ecran.afficher("hasard1 est vrai et hasard2 vrai");
 			}
 			
 			else if ((hasard1 == true) && (hasard2 == false)){
@@ -4110,7 +4101,6 @@ static void JoueurContreJoueur(){
 					case3y = case1y - 2;
 					case4y = case1y - 3;
 					case5y = case1y - 4;
-					Ecran.afficher("hasard1 est vrai et hasard2 faux");
 			}
 			else if((hasard1 == true) && (hasard2 == false)){
 			
@@ -4123,7 +4113,6 @@ static void JoueurContreJoueur(){
 				case4x = (char) transtypage;
 				transtypage ++;
 				case5x = (char) transtypage;
-				Ecran.afficher("hasard1 est faux et hasard2 vrai");
 			}
 			
 			else{
@@ -4168,9 +4157,7 @@ static void JoueurContreJoueur(){
 			Entree4.y = case4y;
 			Entree5.x = case5x;
 			Entree5.y = case5y;
-
-			Ecran.afficher("PorteAv: 1 = ", case1x, case1y, " \n PorteAv: 2 = ", case2x, case2y, " \n PorteAv : 3 = ", case3x, case3y ,"\n PorteAv : 4 = ", case4x, case4y, "\n PorteAv 5 : ", case5x, case5y, "\n");
-				
+	
 			if (((((BateauOuPas(LaCase, Entree1) == false) && (BateauOuPas(LaCase, Entree2) == false)) && (BateauOuPas(LaCase, Entree3) == false)) && ((BateauOuPas(LaCase, Entree4) == false)))&&((BateauOuPas(LaCase, Entree5) == false))){	
 			
 				LaCase = Correspondance(LaCase, Entree1, bateau);
@@ -4239,14 +4226,12 @@ static void JoueurContreJoueur(){
 					case2y = case1y + 1;
 					case3y = case1y + 2;
 					
-					Ecran.afficher("hasard1 est vrai et hasard2 vrai");
 			}
 			
 			else if ((hasard1 == true) && (hasard2 == false)){
 					case2y = case1y - 1;
 					case3y = case1y - 2;
 					
-					Ecran.afficher("hasard1 est vrai et hasard2 faux");
 			}
 			else if((hasard1 == true) && (hasard2 == false)){
 			
@@ -4257,7 +4242,6 @@ static void JoueurContreJoueur(){
 				case3x = (char) transtypage;
 	
 				
-				Ecran.afficher("hasard1 est faux et hasard2 vrai");
 			}
 			
 			else{
@@ -4295,9 +4279,7 @@ static void JoueurContreJoueur(){
 			Entree2.y = case2y;
 			Entree3.x = case3x;
 			Entree3.y = case3y;	
-
-			Ecran.afficher("PorteAv: 1 = ", case1x, case1y, " \n PorteAv: 2 = ", case2x, case2y, " \n PorteAv : 3 = ", case3x, case3y);
-				
+	
 			if ((((BateauOuPas(LaCase, Entree1) == false) && (BateauOuPas(LaCase, Entree2) == false)) && (BateauOuPas(LaCase, Entree3) == false))){	
 			
 				LaCase = Correspondance(LaCase, Entree1, bateau);
@@ -4364,13 +4346,13 @@ static void JoueurContreJoueur(){
 				
 					case2y = case1y + 1;
 					case3y = case1y + 2;		
-					Ecran.afficher("hasard1 est vrai et hasard2 vrai");
+					//debug Ecran.afficher("hasard1 est vrai et hasard2 vrai");
 			}
 			
 			else if ((hasard1 == true) && (hasard2 == false)){
 					case2y = case1y - 1;
 					case3y = case1y - 2;	
-					Ecran.afficher("hasard1 est vrai et hasard2 faux");
+					// debug Ecran.afficher("hasard1 est vrai et hasard2 faux");
 			}
 			else if((hasard1 == true) && (hasard2 == false)){
 			
@@ -4379,7 +4361,7 @@ static void JoueurContreJoueur(){
 				case2x = (char) transtypage;
 				transtypage ++;
 				case3x = (char) transtypage;
-				Ecran.afficher("hasard1 est faux et hasard2 vrai");
+				// debug Ecran.afficher("hasard1 est faux et hasard2 vrai");
 			}
 			
 			else{
@@ -4418,7 +4400,7 @@ static void JoueurContreJoueur(){
 			Entree3.y = case3y;
 			
 
-			Ecran.afficher("PorteAv: 1 = ", case1x, case1y, " \n PorteAv: 2 = ", case2x, case2y, " \n PorteAv : 3 = ", case3x, case3y);
+			//Ecran.afficher("PorteAv: 1 = ", case1x, case1y, " \n PorteAv: 2 = ", case2x, case2y, " \n PorteAv : 3 = ", case3x, case3y);
 				
 			if ((((BateauOuPas(LaCase, Entree1) == false) && (BateauOuPas(LaCase, Entree2) == false)) && (BateauOuPas(LaCase, Entree3) == false))){	
 			
