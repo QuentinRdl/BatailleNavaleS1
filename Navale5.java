@@ -89,7 +89,7 @@ public class Navale5{
 	 * @return Aucun
 	 */
 	static void AfficherRegles(){
-		Ecran.afficher("\nVous avez le choix entre plusieurs modes de jeu, le mode 2 et 3 vous permet de tester le placement de bateaux et vous assurez qu'il marche dans les 2 cas.\nLe mode de jeu 4 vous permet de deviner l'emplacement des bateaux de l'ordinateur sans que celui ci puisse riposter.\nEt finalement le mode de jeu 5 et 6, vous permet de jouer une partie classique contre un ordinateur ou un autre joueur.\nDernierement vous avez dans les differents mode de jeu la possibilite de tricher, si vous faites le choix de tricher, la position des bateaux ennemi sera affiche a chaque tour.\n");
+		Ecran.afficher("\nVous avez le choix entre plusieurs modes de jeu, le mode 2 vous permet de tester le placement de bateaux par l'ordinateur\nLe mode de jeu 3 vous permet de deviner l'emplacement des bateaux de l'ordinateur sans que celui ci puisse riposter.\nEt finalement le mode de jeu 4 et 5, vous permet de jouer une partie classique contre un ordinateur ou un autre joueur.\nDernierement vous avez dans les differents mode de jeu la possibilite de tricher, si vous faites le choix de tricher, \nla position des bateaux ennemi sera affiche a chaque tour.\nLors d'une partie les cases * sont celles indetermines, les o sont ou sont places vos bateaux,\nLorsque vous tirez, les cases ou il y a de l'eau sont indiques par un O et celles ou il y a un bateau sont indiques par un X\nLe jeu s'arrete lorsqu'un des points des joueurs est egal a 0.\n");
 	}	
 	/**	
 	*Sert a lancer l'etape 3 du projet, soit le mode de jeu Joueur Contre Ordi sans riposte du dernier
@@ -188,7 +188,7 @@ public class Navale5{
 			LancerMissileOrdi(CaseJoueur);
 			Ecran.afficher("\nL'ordinateur a lance un missile \n Le resultat du lance ennemi se trouve si dessous \n");
 			AffichageGrilleEnnemi(CaseJoueur);
-			Ecran.afficher("\nTotal points joueurs = ", totalPointsJoueur, "Total points ordi = ", totalPointsOrdi, "\n");
+			Ecran.afficher("\nTotal points joueurs = ", totalPointsJoueur, " Total points ordi = ", totalPointsOrdi, "\n");
 		}
 
 		if (totalPointsOrdi > 1){
@@ -3642,13 +3642,11 @@ static void JoueurContreJoueur(){
 				
 					case2y = case1y + 1;
 					case3y = case1y + 2;
-					Ecran.afficher("hasard1 est vrai et hasard2 vrai");
 			}
 			
 			else if ((hasard1 == true) && (hasard2 == false)){
 					case2y = case1y - 1;
 					case3y = case1y - 2;
-					Ecran.afficher("hasard1 est vrai et hasard2 faux");
 			}
 			else if((hasard1 == true) && (hasard2 == false)){
 			
@@ -3657,7 +3655,6 @@ static void JoueurContreJoueur(){
 				case2x = (char) transtypage;
 				transtypage ++;
 				case3x = (char) transtypage;
-				Ecran.afficher("hasard1 est faux et hasard2 vrai");
 			}
 			
 			else{
@@ -3688,7 +3685,6 @@ static void JoueurContreJoueur(){
 			Entree2.y = case2y;
 			Entree3.x = case3x;
 			Entree3.y = case3y;
-			Ecran.afficher("Sous marin : 1 = ", case1x, case1y, " \n Sous marin : 2 = ", case2x, case2y, " \n Sous marin : 3 = ", case3x, case3y ,"\n");
 				
 		if (((BateauOuPas(LaCase, Entree1) == false) && (BateauOuPas(LaCase, Entree2) == false)) && (BateauOuPas(LaCase, Entree3) == false)){	
 			
